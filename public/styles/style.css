@@ -1,0 +1,94 @@
+body{
+  padding: 0;
+  margin: 0;
+}
+
+li 
+{
+  list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+  color: #eeeeee;
+}
+
+.header {
+  background-color: black;
+  padding: 15px 50px;
+}
+.header-ul {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  font-size: 18px;
+  justify-content: space-between;
+}
+.navs-header {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+.icons-header {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+#logo-text 
+{
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.front {
+  display: flex;
+  flex: 0 1 auto;
+}
+#video {
+  max-width: 100%;
+  display: flex;
+  position: relative;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.overlay #heading {
+  font-size: 70px;
+  font-weight: 500;
+  text-align: center;
+  max-width: 1000px;
+}
+
+.overlay #content {
+  font-size: 20px;
+  max-width: 500px;
+  font-weight: 300;
+  text-align: center;
+}
+
+
+
+
+.WorkSans {
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+}

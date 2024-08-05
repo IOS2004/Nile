@@ -3,9 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="public/styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Nile</title>
 </head>
 <body>
-  <h1 style="text-align: center;">Nile</h1>
+  <div class="header WorkSans">
+    <ul class="header-ul">
+      <li id="logo-text"> <a style="color:blue;" href="#">Nile</a> </li>
+      <div class="navs-header">
+        <li> <a href="#">Brands</a> </li>
+        <li> <a href="#">About</a> </li>
+        <li> <a href="#">Support</a> </li>
+      </div>
+      <div class="icons-header">
+        <li> <a href="#"><img alt="Profile" src="public/images/profile.png"></a> </li>
+        <li> <a href="#"><img alt="Cart" src="public/images/cart.png"></a> </li>  
+      </div>
+    </ul>
+  </div>
+  <div class="front">
+    <video id="video" autoplay muted loop> 
+      <source src="public/images/front.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <div id="heading">First choice of audiophiles</div>
+      <div id="content">Immerse in a world where every note feels personal. Experience the extraordinary sound and comfort of Nile headphones—where music becomes a journey</div>
+    </div>
+  </div>
 </body>
 </html>
