@@ -1,6 +1,8 @@
 body{
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 li 
@@ -33,6 +35,7 @@ a{
   margin: 0;
   padding: 0;
   gap: 30px;
+  font-weight: 500;
 }
 .icons-header {
   display: flex;
@@ -74,6 +77,7 @@ a{
   font-weight: 500;
   text-align: center;
   max-width: 1000px;
+  color: #eeeeee;
 }
 
 .overlay #content {
@@ -81,6 +85,7 @@ a{
   max-width: 500px;
   font-weight: 300;
   text-align: center;
+  color: #eeeeee;
 }
 
 
@@ -91,4 +96,126 @@ a{
   font-optical-sizing: auto;
   font-weight: 350;
   font-style: normal;
+
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.y-straight {
+  font-family: "Ysabeau SC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* catalouges */
+
+.catalouge {
+  display: flex;
+  margin: 50px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color:#ffffff;
+}
+
+.catalouge img {
+  width: 30%;
+  height: 30%;
+  padding: 16px;
+  flex: 0 1 auto;
+}
+
+#chead {
+  font-size: 22px;
+  font-weight: 700;
+  color: black;
+}
+
+#ctext {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(94, 94, 94);
+}
+
+.ccont {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+  max-width: 500px;
+  flex: 0 6 auto;
+}
+
+.ccont a {
+  color:#717171;
+  font-size: 22px;
+}
+
+
+/* footer */
+.footer {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-info {
+  display: flex;
+}
+
+.bottom-line {
+  display: flex;
+  padding: 15px 50px;
+  flex-wrap: nowrap;
+  margin: 0;
+  align-items: center;
+  font-size: 18px;
+  justify-content: start;
+  gap: 20px;
+}
+
+#blog {
+  margin-right: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  /* Styles for mobile devices */
+  .catalouge img  {
+  display: none;
+ }
+ .overlay {
+  display: none;
+ }
+ .header {
+  padding: 15px 15px;
+ }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .catalouge img  {
+    display: none;
+   }
+   .overlay {
+    display: none;
+   }
 }
