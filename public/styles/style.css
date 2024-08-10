@@ -122,6 +122,7 @@ a{
   font-weight: 400;
   font-style: normal;
 }
+
 /* catalouges */
 
 .catalouge {
@@ -164,6 +165,27 @@ a{
   font-size: 22px;
 }
 
+/* Review Card */
+.review {
+  display: flex;
+  background-color: #eeeeee;
+  margin: 100px;
+  padding: 64px;
+  border-radius: 5px;
+  font-weight: 400;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  gap: 20px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#person {
+  font-family: "Ysabeau SC", sans-serif;;
+  font-weight: 200;
+  font-size: 22px;
+}
 
 /* footer */
 .footer {
@@ -209,7 +231,7 @@ a{
 
 
 
-
+/* screen adjustments */
 
 @media only screen and (max-width: 600px) {
   /* Styles for mobile devices */
@@ -239,6 +261,10 @@ a{
   margin: 32px;
 }
 
+.review {
+  margin: 32px;
+  padding: 16px;
+}
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   .catalouge img  {
