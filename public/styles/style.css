@@ -129,7 +129,6 @@ a{
   margin: 50px;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color:#ffffff;
 }
 
 .catalouge img {
@@ -175,11 +174,16 @@ a{
 
 .foot-info {
   display: flex;
+  color: white;
+  padding: 16px;
+  margin: 86px;
+  gap: 100px;
+  font-size: 18px;
 }
 
 .bottom-line {
   display: flex;
-  padding: 15px 50px;
+  padding: 15px 50px 100px 50px;
   flex-wrap: nowrap;
   margin: 0;
   align-items: center;
@@ -192,7 +196,12 @@ a{
   margin-right: auto;
 }
 
-
+.line-sep {
+  min-height: 1px;
+  background-color: #333;
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
 
 
@@ -225,6 +234,10 @@ a{
  .navs-header {
   gap: 10px;
  }
+.foot-info {
+  gap: 0px;
+  margin: 32px;
+}
 
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
