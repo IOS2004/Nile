@@ -1,2 +1,0 @@
-# Nile
-An Ecommerce Website.
