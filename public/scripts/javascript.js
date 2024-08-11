@@ -54,3 +54,26 @@ test.addEventListener('click', () => {
   prompt('hello');
   window.location.href = 'public/pages/product_page.html';
 });
+
+
+let loginStatus = document.querySelector('#login-status');
+function updateLoginStatus(str) {
+  loginStatus.innerHTML = str;
+}
+
+fetch('/nile/auth-status')
+  .then(response => response.json())
+  .then(data => {
+
+    if (data.authenticated) {
+      updateLoginStatus("Logged in")
+    }
+    else {
+      updateLoginStatus("Not logged in")
+    }
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
