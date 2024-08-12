@@ -40,7 +40,7 @@ for (let i = 0; i < 7; i++)
   addItem(scroller3, "featured headphone " + i, "public/images/featured/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
 }
 
-/* Product page */
+/* Product page 
 let header = document.querySelector('#mainHeader');
 let footer = document.querySelector('#mainFooter');
 let test = document.querySelector("#test");
@@ -54,26 +54,50 @@ test.addEventListener('click', () => {
   prompt('hello');
   window.location.href = 'public/pages/product_page.html';
 });
-
-
+*/
 let loginStatus = document.querySelector('#login-status');
 function updateLoginStatus(str) {
   loginStatus.innerHTML = str;
 }
 
+// fetch('/nile/auth-status')
+//   .then(response => response.json())
+//   .then(data => {
+
+//     if (data.authenticated) {
+//       updateLoginStatus("Logged in")
+//     }
+//     else {
+//       updateLoginStatus("Not logged in")
+//     }
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+function handleData() {
+  // This function will be called after the data is fetched
+  console.log(fuck);
+  window.UserData = fuck;
+}
+
+// Fetch data and handle it
 fetch('/nile/auth-status')
   .then(response => response.json())
   .then(data => {
-
-    if (data.authenticated) {
-      updateLoginStatus("Logged in")
-    }
-    else {
-      updateLoginStatus("Not logged in")
+    fuck = data;
+    handleData(); // Call the function that uses the fetched data
+    if (data) {
+      const name = data.username;
+      const email = data.email;
+      updateLoginStatus(`Logged in ${name}`);
+      console.log(`Username: ${name}, Email: ${email}`);
+    } else {
+      updateLoginStatus("Not logged in");
     }
   })
   .catch(error => {
     console.log(error);
   });
 
-
+  
