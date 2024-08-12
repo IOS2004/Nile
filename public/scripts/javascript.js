@@ -14,9 +14,6 @@ function addItem(parent, name, path, price, page)
 
 function createProductPage()
 {
-
-
-
   return '#';
 }
 
@@ -40,60 +37,42 @@ for (let i = 0; i < 7; i++)
   addItem(scroller3, "featured headphone " + i, "public/images/featured/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
 }
 
-/* Product page 
-let header = document.querySelector('#mainHeader');
-let footer = document.querySelector('#mainFooter');
-let test = document.querySelector("#test");
-test.addEventListener('click', () => {
-  const content = header.outerHTML;
-  const content2 = footer.outerHTML;
-  localStorage.setItem('header', content);
-  localStorage.setItem('footer', content2);
-  console.log(localStorage.getItem('header'));
-  console.log(localStorage.getItem('footer'));
-  prompt('hello');
-  window.location.href = 'public/pages/product_page.html';
-});
-*/
+
+// Managing profile
+
 let loginStatus = document.querySelector('#login-status');
-function updateLoginStatus(str) {
-  loginStatus.innerHTML = str;
+let login_btn = document.querySelector("#login-btn");
+
+function updateLoginStatus(str, isLogin) {
+  // handle status
+  if (isLogin) {
+    loginStatus.innerHTML = "<h1> Welcome " + str + "</h1>";
+    login_btn.href = "public/pages/profile.html";
+  }
+  else
+  {
+    login_btn.href = "/nile/login";
+    loginStatus.innerHTML = "<h1> " + str + "</h1>";
+  }
 }
-
-// fetch('/nile/auth-status')
-//   .then(response => response.json())
-//   .then(data => {
-
-//     if (data.authenticated) {
-//       updateLoginStatus("Logged in")
-//     }
-//     else {
-//       updateLoginStatus("Not logged in")
-//     }
-//   })
-//   .catch(error => {
-//     console.log(error);
-//   });
 
 function handleData() {
   // This function will be called after the data is fetched
-  console.log(fuck);
-  window.UserData = fuck;
+
 }
 
 // Fetch data and handle it
 fetch('/nile/auth-status')
   .then(response => response.json())
   .then(data => {
-    fuck = data;
     handleData(); // Call the function that uses the fetched data
     if (data) {
       const name = data.username;
       const email = data.email;
-      updateLoginStatus(`Logged in ${name}`);
+      updateLoginStatus(name, true);
       console.log(`Username: ${name}, Email: ${email}`);
     } else {
-      updateLoginStatus("Not logged in");
+      updateLoginStatus("Not logged in", false);
     }
   })
   .catch(error => {
