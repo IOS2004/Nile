@@ -7,7 +7,7 @@ const path = require("path")
 const login = require("./server/routes/login.js")
 const cookieparser = require("cookie-parser")
 
-app.use(express.static(path.join(__dirname, '')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cookieparser());
 app.use(bodyParser.urlencoded({ extended: true }));

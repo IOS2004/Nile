@@ -24,35 +24,34 @@ function getRandom(a, b)
 
 for (let i = 0; i < 6; i++)
 {
-  addItem(scroller, "best selling headphone " + i, "public/images/bestselling/" + i + ".jpg", getRandom(1000, 15000), createProductPage() );
+  addItem(scroller, "best selling headphone " + i, "images/bestselling/" + i + ".jpg", getRandom(1000, 15000), createProductPage() );
 }
 
 for (let i = 0; i < 6; i++)
 {
-  addItem(scroller2, "classic headphone " + i, "public/images/classics/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
+  addItem(scroller2, "classic headphone " + i, "images/classics/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
 }
 
 for (let i = 0; i < 7; i++)
 {
-  addItem(scroller3, "featured headphone " + i, "public/images/featured/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
+  addItem(scroller3, "featured headphone " + i, "images/featured/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
 }
 
 
 // Managing profile
 
-let loginStatus = document.querySelector('#login-status');
 let login_btn = document.querySelector("#login-btn");
 
 function updateLoginStatus(str, isLogin) {
   // handle status
   if (isLogin) {
-    loginStatus.innerHTML = "<h1> Welcome " + str + "</h1>";
-    login_btn.href = "public/pages/profile.html";
+    login_btn.href = "pages/profile.html";
+    login_btn.innerHTML = '<img alt="Profile" src="images/profile.png"></img>';
   }
   else
   {
     login_btn.href = "/nile/login";
-    loginStatus.innerHTML = "<h1> " + str + "</h1>";
+    login_btn.innerHTML = 'Login';
   }
 }
 
@@ -70,6 +69,7 @@ fetch('/nile/auth-status')
       const name = data.username;
       const email = data.email;
       updateLoginStatus(name, true);
+      console.log(data);
       console.log(`Username: ${name}, Email: ${email}`);
     } else {
       updateLoginStatus("Not logged in", false);

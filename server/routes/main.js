@@ -19,5 +19,11 @@ router.post('/logout', (req, res) => {
   res.sendStatus(200); // Send a success status
 });
 
+// Route for the home page
+router.get('/', (req, res) => {
+  res.render('index');
+});
+
+
 
 module.exports = router
