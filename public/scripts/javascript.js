@@ -46,7 +46,7 @@ function updateLoginStatus(str, isLogin) {
   // handle status
   if (isLogin) {
     login_btn.href = "pages/profile.html";
-    login_btn.innerHTML = '<img alt="Profile" src="images/profile.png"></img>';
+    login_btn.innerHTML = 'Profile';
   }
   else
   {
