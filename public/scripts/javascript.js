@@ -14,9 +14,6 @@ function addItem(parent, name, path, price, page)
 
 function createProductPage()
 {
-
-
-
   return '#';
 }
 
@@ -27,30 +24,59 @@ function getRandom(a, b)
 
 for (let i = 0; i < 6; i++)
 {
-  addItem(scroller, "best selling headphone " + i, "public/images/bestselling/" + i + ".jpg", getRandom(1000, 15000), createProductPage() );
+  addItem(scroller, "best selling headphone " + i, "images/bestselling/" + i + ".jpg", getRandom(1000, 15000), createProductPage() );
 }
 
 for (let i = 0; i < 6; i++)
 {
-  addItem(scroller2, "classic headphone " + i, "public/images/classics/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
+  addItem(scroller2, "classic headphone " + i, "images/classics/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
 }
 
 for (let i = 0; i < 7; i++)
 {
-  addItem(scroller3, "featured headphone " + i, "public/images/featured/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
+  addItem(scroller3, "featured headphone " + i, "images/featured/" + i + ".jpg",  getRandom(1000, 15000), createProductPage() );
 }
 
-/* Product page */
-let header = document.querySelector('#mainHeader');
-let footer = document.querySelector('#mainFooter');
-let test = document.querySelector("#test");
-test.addEventListener('click', () => {
-  const content = header.outerHTML;
-  const content2 = footer.outerHTML;
-  localStorage.setItem('header', content);
-  localStorage.setItem('footer', content2);
-  console.log(localStorage.getItem('header'));
-  console.log(localStorage.getItem('footer'));
-  prompt('hello');
-  window.location.href = 'public/pages/product_page.html';
-});
+
+// Managing profile
+
+let login_btn = document.querySelector("#login-btn");
+
+function updateLoginStatus(str, isLogin) {
+  // handle status
+  if (isLogin) {
+    login_btn.href = "pages/profile.html";
+    login_btn.innerHTML = 'Profile';
+  }
+  else
+  {
+    login_btn.href = "/nile/login";
+    login_btn.innerHTML = 'Login';
+  }
+}
+
+function handleData() {
+  // This function will be called after the data is fetched
+
+}
+
+// Fetch data and handle it
+fetch('/nile/auth-status')
+  .then(response => response.json())
+  .then(data => {
+    handleData(); // Call the function that uses the fetched data
+    if (data) {
+      const name = data.username;
+      const email = data.email;
+      updateLoginStatus(name, true);
+      console.log(data);
+      console.log(`Username: ${name}, Email: ${email}`);
+    } else {
+      updateLoginStatus("Not logged in", false);
+    }
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+  
