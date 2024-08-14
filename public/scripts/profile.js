@@ -28,8 +28,19 @@ pemail.textContent = email;
 // logout function 
 let logOut = document.querySelector('#logout');
 logOut.addEventListener('click', () => {
-  alert("lode te lassan");
-});
+  fetch('/nile/logout', { method: 'POST' })
+      .then(response => {      
+      if (response.ok) {
+        window.location.href = '/nile';
+      } 
+      else {
+        console.error('Logout failed');
+      }
+    })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  });
 
 // favourites scroller
 function addItem(parent, name, path, price, page)

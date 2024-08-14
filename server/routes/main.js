@@ -15,8 +15,8 @@ router.get('/auth-status', authenticateToken, (req, res) => {
 });
 
 router.post('/logout', (req, res) => {
-  res.clearCookie('token'); // Clear the cookie named 'token'
-  res.sendStatus(200); // Send a success status
+  res.clearCookie('token'); // Clear the cookie named 'token
+  res.sendStatus(200);
 });
 
 // Route for the home page

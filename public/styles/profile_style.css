@@ -9,6 +9,7 @@
   background-color: #eeeeee;
   margin: 50px;
   gap: 30px;
+  border-radius: 5px;
 }
 
 #pimg img{
@@ -44,6 +45,7 @@
   border: none;
   height: 50px;
   width: 100px;
+  border-radius: 5px;
 }
 
 #logout:hover {
