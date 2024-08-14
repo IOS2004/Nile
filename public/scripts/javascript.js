@@ -66,6 +66,7 @@ fetch('/nile/auth-status')
   .then(data => {
     handleData(); // Call the function that uses the fetched data
     if (data) {
+      localStorage.setItem('UserData', JSON.stringify(data));
       const name = data.username;
       const email = data.email;
       updateLoginStatus(name, true);
