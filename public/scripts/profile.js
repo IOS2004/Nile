@@ -5,7 +5,7 @@ fetch('/nile/auth-status')
   })
   .catch(error => {
     console.log(error);
-  });
+});
 
   
 let display = document.querySelector('.data');

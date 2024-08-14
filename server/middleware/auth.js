@@ -3,7 +3,7 @@ const SECRET_KEY = "Va&&&&&$$$$$"; // Use the same secret key used in login rout
 
 // Function to generate a JWT token
 const generateToken = (user) => {
-  return jwt.sign({ id: user._id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
+  return jwt.sign({ id: user._id, username: user.username, email: user.email}, SECRET_KEY, { expiresIn: '1h' });
 };
 
 // Middleware to authenticate a JWT token
