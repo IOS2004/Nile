@@ -48,6 +48,7 @@
 
 #logout:hover {
   background-color: rgb(1, 1, 126);
+  cursor: pointer;
 }
 
 .prof.scroll-card {
