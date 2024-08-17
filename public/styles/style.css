@@ -44,6 +44,24 @@ a{
   gap: 20px;
   flex-wrap: nowrap;
 }
+
+.badge {
+  position: absolute;
+  top: 4px; /* Adjust position as needed */
+  right: 35px; /* Adjust position as needed */
+  background-color: white;
+  font-weight: bold;
+  color: black;
+  border-radius: 50%;
+  width: 20px; /* Adjust width as needed */
+  height: 20px; /* Adjust height as needed */
+  font-size: 12px; /* Adjust font size as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 #logo-text 
 {
   font-size: 25px;
@@ -328,6 +346,9 @@ h1 {
 .review {
   margin: 32px;
   padding: 16px;
+}
+.badge {
+  right: 3px;
 }
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {

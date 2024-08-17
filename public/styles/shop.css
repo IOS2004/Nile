@@ -82,3 +82,47 @@
   margin: 20px;
 }
 
+/* screen adjustments */
+
+@media only screen and (max-width: 1000px) {
+  /* Styles for mobile devices */
+  .product-card {
+    max-width: 300px;
+    max-height: 370px;
+  }
+  .showcase {
+    padding: 35px;
+    margin: 16px;
+    gap: 32px;
+  }
+  
+}
+
+@media only screen and (max-width: 750px) {
+  /* Styles for mobile devices */
+  .product-card {
+    max-width: 200px;
+    max-height: 270px;
+  }
+  .showcase {
+    padding: 10px;
+    margin: 10px;
+    gap: 32px;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  /* Styles for mobile devices */
+  .product-card {
+    max-width: 150px;
+    max-height: 220px;
+  }
+  .showcase {
+    padding: 2px;
+    margin: 2px;
+    gap: 16px;
+    padding-bottom: 100px;
+  }
+  
+}
