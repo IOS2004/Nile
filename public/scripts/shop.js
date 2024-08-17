@@ -3,7 +3,7 @@ function addItem(parent, name, path, price, page, category)
 {
   let item = document.createElement('div');
   item.classList.add('product-card');
-  item.setAttribute('link', page);
+  item.setAttribute('link', 'product_page.html');
   item.innerHTML = '<img src="' + path + '" alt="' + name + '"> ' + '<div id="product_name">' + name + '</div>' + '<div id="categ">' + category + '</div>'+ '<div id="product_price"> &#8377; ' + price + '.00</div>';
   parent.appendChild(item);
 }
