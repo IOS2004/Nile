@@ -4,7 +4,7 @@ function addItem(parent, name, path, price, page, category)
   let item = document.createElement('div');
   item.classList.add('product-card');
   item.setAttribute('link', page);
-  item.innerHTML = '<img src="' + path + '" alt="' + name + '"> ' + name + '<div id="categ">' + category + '</div>'+ '<div> &#8377; ' + price + '.00</div>';
+  item.innerHTML = '<img src="' + path + '" alt="' + name + '"> ' + '<div id="product_name">' + name + '</div>' + '<div id="categ">' + category + '</div>'+ '<div id="product_price"> &#8377; ' + price + '.00</div>';
   parent.appendChild(item);
 }
 
@@ -81,9 +81,11 @@ EarBuds.addEventListener('click', () => {
 })
 
 
-document.querySelectorAll('.product-card').forEach(card => {
-  card.addEventListener('click', () => {
+showcase.addEventListener('click', (event) => {
+  // Check if the clicked element is a product card
+  let card = event.target.closest('.product-card');
+  if (card) {
     let link = card.getAttribute('link');
     window.location.href = link;
-  })
-})
+  }
+});

@@ -96,11 +96,10 @@ img{
         max-width: 300px;
         flex-direction: column;
         margin: 5px;
-        text-align:start;
+        text-align:center;
     }
     .hero-image {
-        margin: 0;
-        padding: 0;
+       display: none;
     }
 }
 
