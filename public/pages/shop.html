@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Ysabeau+SC:wght@1..1000&display=swap"
     rel="stylesheet">
+  <script src="../scripts/shop.js" defer></script>
   <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/profile_style.css"> 
-  <script src="../scripts/profile.js" defer></script>
-  <title>Nile Profile</title>
+  <link rel="stylesheet" href="../styles/shop.css">
 </head>
 <body>
   <div class="header WorkSans" id="mainHeader">
@@ -20,30 +20,31 @@
       <div class="navs-header">
         <li> <a href="aboutus.html">About</a> </li>
         <li> <a href="support.html">Support</a> </li>
-        <li> <a href="shop.html">Shop</a> </li>
+        <li> <a href="#">Shop</a> </li>
       </div>
       <div class="icons-header">
-        <li> <a href="#">Profile</a> </li>
+        <li> <a href="profile.html">Profile</a> </li>
         <li> <a href="#"><img alt="Cart" src="../images/cart.png"></a> </li>  
       </div>
     </ul>
   </div>
   
-  <div class="profile_card WorkSans">
-    <div id="pimg" class="circle">
-      <img src="../images/profile_images/default.svg" alt="profile picture"> 
-    </div>
-    <h1 id="pname"></h1>
-    <h2 id="pemail"></h2>
-    <button id="logout">LOG OUT</button>
-  </div>
-
-  <div class="prof scroll-card y-straight">
-    <h1>favourites</h1>
-    <div class="scroller" id="favourites">
+  <div class="shop_container">
+    <div class="categories WorkSans">
+      <h2> Categories </h2>
+      <button id="All">All</button>
+      <button id="overEar">Over Ear Headphones</button>
+      <button id="InEar">In Ear Monitors</button>
+      <button id="EarBuds">Ear Buds</button>
 
     </div>
+    <div class="showcase WorkSans">
+      
+    </div>
   </div>
+
+
+  
 
   <div class="footer" id="mainFooter">
     <div class="foot-info y-straight">
@@ -65,9 +66,9 @@
     </div>
     <div class="line-sep"></div>
     <div class="bottom-line y-straight">
-      <li id="blog"> <a href="/nile"">&#169; 2024 <span style="color: blue;">nile</span></a> </li>
+      <li id="blog"> <a href="#"">&#169; 2024 <span style="color: blue;">nile</span></a> </li>
       <li> <a href="#">privacy policy</a> </li>
-      <li> <a href="#">term and conditions</a> </li>
+      <li> <a href="#">terms and conditions</a> </li>
     </div>
   </div>
 </body>

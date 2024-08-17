@@ -88,15 +88,20 @@ img{
     }
     .container{
         width: 100%;
+        margin: 5px;
+        padding: 5px;
         flex-direction: column;
     }
     .container .hero-content{
-        width: 100%;
+        max-width: 300px;
         flex-direction: column;
         margin: 5px;
         text-align:start;
     }
-    
+    .hero-image {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 /* Extra Small Devices (Phones, 320px and up) */
