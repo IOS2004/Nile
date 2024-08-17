@@ -1,0 +1,58 @@
+[
+  {
+    "name": "ProductA",
+    "id": 1,
+    "path": "images/overEar/0.jpg",
+    "price": 19.99,
+    "details": "A detailed description of ProductA."
+  },
+  {
+    "name": "ProductB",
+    "id": 2,
+    "path": "images/overEar/1.jpg",
+    "price": 29.99,
+    "details": "A detailed description of ProductB."
+  },
+  {
+    "name": "ProductC",
+    "id": 3,
+    "path": "images/overEar/2.jpg",
+    "price": 39.99,
+    "details": "A detailed description of ProductC."
+  },
+  {
+    "name": "ProductD",
+    "id": 4,
+    "path": "images/overEar/3.jpg",
+    "price": 49.99,
+    "details": "A detailed description of ProductD."
+  }, 
+  {
+    "name": "ProductE",
+    "id": 1,
+    "path": "images/overEar/4.jpg",
+    "price": 19.99,
+    "details": "A detailed description of ProductA."
+  },
+  {
+    "name": "ProductB",
+    "id": 2,
+    "path": "images/overEar/5.jpg",
+    "price": 29.99,
+    "details": "A detailed description of ProductB."
+  },
+  {
+    "name": "ProductC",
+    "id": 3,
+    "path": "images/overEar/6.jpg",
+    "price": 39.99,
+    "details": "A detailed description of ProductC."
+  },
+  {
+    "name": "ProductD",
+    "id": 4,
+    "path": "images/overEar/3.jpg",
+    "price": 49.99,
+    "details": "A detailed description of ProductD."
+  }
+]

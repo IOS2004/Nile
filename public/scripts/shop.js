@@ -13,72 +13,72 @@ function getRandom(a, b)
   return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
-function displayAll ()
-{
-  showcase.innerHTML = '';
-  for (let i = 0; i < 6; i++)
-    {
-      addItem(showcase, "Classic headphone " + i, "../images/classics/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
-    }
+// function displayAll ()
+// {
+//   showcase.innerHTML = '';
+//   for (let i = 0; i < 6; i++)
+//     {
+//       addItem(showcase, "Classic headphone " + i, "../images/classics/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
+//     }
     
-    for (let i = 0; i < 6; i++)
-    {
-    addItem(showcase, "Best selling headphone " + i, "../images/bestselling/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
-    }
+//     for (let i = 0; i < 6; i++)
+//     {
+//     addItem(showcase, "Best selling headphone " + i, "../images/bestselling/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
+//     }
     
-    for (let i = 0; i < 7; i++)
-    {
-      addItem(showcase, "Featured headphone " + i, "../images/featured/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
-    }
-}
+//     for (let i = 0; i < 7; i++)
+//     {
+//       addItem(showcase, "Featured headphone " + i, "../images/featured/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
+//     }
+// }
 
-function displayOverTheEar () {
-  showcase.innerHTML = '';
-  for (let i = 0; i < 6; i++)
-    {
-      addItem(showcase, "Classic headphone " + i, "../images/classics/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
-    }
+// function displayOverTheEar () {
+//   showcase.innerHTML = '';
+//   for (let i = 0; i < 6; i++)
+//     {
+//       addItem(showcase, "Classic headphone " + i, "../images/classics/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
+//     }
     
-}
+// }
 
-function displayInEarMonitor() {
-  showcase.innerHTML = '';
-  for (let i = 0; i < 6; i++)
-    {
-    addItem(showcase, "Best selling headphone " + i, "../images/bestselling/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
-    }
-}
+// function displayInEarMonitor() {
+//   showcase.innerHTML = '';
+//   for (let i = 0; i < 6; i++)
+//     {
+//     addItem(showcase, "Best selling headphone " + i, "../images/bestselling/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
+//     }
+// }
 
-function displayEarBuds() {
-  showcase.innerHTML = '';
-  for (let i = 0; i < 7; i++)
-    {
-      addItem(showcase, "Featured headphone " + i, "../images/featured/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
-    }
-}
+// function displayEarBuds() {
+//   showcase.innerHTML = '';
+//   for (let i = 0; i < 7; i++)
+//     {
+//       addItem(showcase, "Featured headphone " + i, "../images/featured/" + i + ".jpg",  getRandom(1000, 15000), '/nile' , 'Headphone');
+//     }
+// }
 
-displayAll();
+// displayAll();
 
 let overEar = document.querySelector('#overEar');
 let all = document.querySelector('#All');
 let InEar = document.querySelector('#InEar');
 let EarBuds = document.querySelector('#EarBuds');
 
-overEar.addEventListener('click', () => {
-  displayOverTheEar();
-})
+// overEar.addEventListener('click', () => {
+//   displayOverTheEar();
+// })
 
-all.addEventListener('click', () => {
-  displayAll();
-})
+// all.addEventListener('click', () => {
+//   displayAll();
+// })
 
-InEar.addEventListener('click', () => {
-  displayInEarMonitor();
-})
+// InEar.addEventListener('click', () => {
+//   displayInEarMonitor();
+// })
 
-EarBuds.addEventListener('click', () => {
-  displayEarBuds();
-})
+// EarBuds.addEventListener('click', () => {
+//   displayEarBuds();
+// })
 
 
 showcase.addEventListener('click', (event) => {
@@ -89,3 +89,35 @@ showcase.addEventListener('click', (event) => {
     window.location.href = link;
   }
 });
+
+document.addEventListener("DOMContentLoaded",function(){
+  fetch('/nile/shop/products')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    update_products(data);
+  })
+})
+
+
+function update_products(data) {
+  let ovnum = 4;
+  let ienum = 6;
+  let ebnum = 6;
+  let id = data[3].id;
+  let prod = data.findIndex(item => item.id === id);
+  console.log(data[prod].name);
+  for (i = 0; i < ovnum; i++)
+  {
+    let product = data[i];
+    addItem(showcase, product.name, '../' + product.path, product.price, '#', 'Over the Ear')
+  }
+  for (i = ovnum; i < ienum; i++)
+  {
+
+  }
+  for (i = ienum; i < ebnum; i++)
+  {
+
+  }
+}
