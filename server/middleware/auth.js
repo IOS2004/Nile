@@ -1,41 +1,39 @@
+const User = require("../models/user")
 const jwt = require("jsonwebtoken");
-const SECRET_KEY = "Va&&&&&$$$$$"; // Use the same secret key used in login route
+const SECRET_KEY = "Va&&&&&$$$$$";
 
-// Function to generate a JWT token
+
 const generateToken = (user) => {
-  return jwt.sign({ id: user._id, username: user.username, email: user.email}, SECRET_KEY, { expiresIn: '1h' });
+  return jwt.sign({ id: user._id, username: user.username, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
 };
 
-// Middleware to authenticate a JWT token
-// const authenticateToken = (req, res, next) => {
-//   const token = req.cookies.token; // Assuming the token is stored in cookies
 
-//   if (!token) {
-//     return res.json({ authenticated: false });   // No token found
-//   }
-
-//   jwt.verify(token, SECRET_KEY, (err, user) => {
-//     if (err) {
-//       return res.json({ authenticated: false });  // Token is not valid
-//     }
-
-//     return res.json({ authenticated: true });
-//   });
-
-// };
-const authenticateToken = (req, res, next) => {
-  const token = req.cookies.token; // Assuming the token is stored in cookies
+const authenticateToken = async (req, res, next) => {
+  const token = req.cookies.token;
 
   if (!token) {
-    return res.json(null); // No token found
+    return res.json(null);
   }
 
-  jwt.verify(token, SECRET_KEY, (err, user) => {
+  jwt.verify(token, SECRET_KEY, async (err, decodedToken) => {
     if (err) {
-      return res.json(null); // Token is not valid
+      return res.json(null);
     }
 
-    return res.json(user); // Send the entire user data
+    try {
+      const user = await User.findOne({ username: decodedToken.username }).exec();
+      const userData = user.toObject();
+      delete userData.password;
+      delete userData.createdAt;
+      delete userData.updatedAt;
+      delete userData._id;
+      delete userData.__v;
+
+      res.json(userData);
+    } catch (error) {
+      console.error('Error fetching user:', error);
+      res.status(500).json(null);
+    }
   });
 };
 
