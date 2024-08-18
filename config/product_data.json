@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Eclipse X1",
+    "id": 1,
+    "path": "images/overEar/0.jpg",
+    "price": 1659.17,
+    "details": "Over-ear headphones offering a balanced sound with a sleek design. Features 40mm dynamic drivers, a frequency response of 20Hz-20kHz, and a lightweight, foldable design for portability."
+  },
+  {
+    "name": "Thunderbolt",
+    "id": 2,
+    "path": "images/overEar/1.jpg",
+    "price": 2489.17,
+    "details": "Over-ear headphones with powerful bass and enhanced noise isolation. Equipped with 50mm drivers, 32Ω impedance, and passive noise reduction technology for immersive listening."
+  },
+  {
+    "name": "Mirage Pro",
+    "id": 3,
+    "path": "images/overEar/2.jpg",
+    "price": 3319.17,
+    "details": "Premium over-ear headphones designed for audiophiles. Features 45mm neodymium drivers, 10Hz-25kHz frequency response, and memory foam ear cushions for extended comfort."
+  },
+  {
+    "name": "Vortex",
+    "id": 4,
+    "path": "images/overEar/3.jpg",
+    "price": 4149.17,
+    "details": "Top-tier over-ear headphones with professional-grade sound quality. Includes 50mm high-definition drivers, 16Ω impedance, active noise-canceling technology, and a built-in microphone for calls."
+  },
+  {
+    "name": "Fusion",
+    "id": 5,
+    "path": "images/overEar/4.jpg",
+    "price": 4969.17,
+    "details": "Over-ear headphones focused on clarity and comfort. Features 40mm drivers, a frequency response of 18Hz-22kHz, and a durable, tangle-free cable with in-line controls."
+  },
+  {
+    "name": "Reverb",
+    "id": 6,
+    "path": "images/overEar/5.jpg",
+    "price": 5759.17,
+    "details": "High-performance over-ear headphones with advanced noise-canceling technology. Includes 50mm drivers, Bluetooth 5.0 connectivity, up to 30 hours of battery life, and quick charge capabilities."
+  },
+  {
+    "name": "Zen Buds",
+    "id": 7,
+    "path": "images/inEar/0.jpg",
+    "price": 1659.17,
+    "details": "In-ear headphones with a comfortable fit and clear, dynamic sound. Features 10mm drivers, 16Hz-20kHz frequency response, and multiple ear tip sizes for a customized fit."
+  },
+  {
+    "name": "Pulse",
+    "id": 8,
+    "path": "images/inEar/1.jpg",
+    "price": 2489.17,
+    "details": "In-ear headphones designed for active lifestyles. Equipped with 9mm drivers, a 20Hz-18kHz frequency response, sweat resistance, and an ergonomic design for secure wear during workouts."
+  },
+  {
+    "name": "Echo",
+    "id": 9,
+    "path": "images/inEar/2.jpg",
+    "price": 3319.17,
+    "details": "Premium in-ear headphones with superior sound isolation. Features balanced armature drivers, a 15Hz-22kHz frequency response, and a lightweight aluminum housing for durability."
+  },
+  {
+    "name": "Infinity",
+    "id": 10,
+    "path": "images/inEar/3.jpg",
+    "price": 4149.17,
+    "details": "High-end in-ear headphones with an expansive soundstage. Includes dual dynamic drivers, a 10Hz-25kHz frequency response, and a tangle-free cable with in-line microphone and remote."
+  },
+  {
+    "name": "Surge",
+    "id": 11,
+    "path": "images/inEar/4.jpg",
+    "price": 4969.17,
+    "details": "In-ear headphones offering an immersive sound experience. Equipped with 11mm drivers, a 12Hz-24kHz frequency response, IPX5 water resistance, and noise-isolating ear tips."
+  },
+  {
+    "name": "Rhythm",
+    "id": 12,
+    "path": "images/inEar/5.jpg",
+    "price": 5759.17,
+    "details": "Premium in-ear headphones designed for clear, balanced audio. Features triple balanced armature drivers, a 10Hz-20kHz frequency response, and a durable Kevlar-reinforced cable."
+  },
+  {
+    "name": "Aether Pods",
+    "id": 13,
+    "path": "images/earBuds/0.jpg",
+    "price": 1659.17,
+    "details": "Affordable earbuds with a lightweight design and balanced sound. Includes 8mm drivers, a 20Hz-20kHz frequency response, and a compact charging case for portability."
+  },
+  {
+    "name": "Velocity",
+    "id": 14,
+    "path": "images/earBuds/1.jpg",
+    "price": 2489.17,
+    "details": "Earbuds offering high-fidelity sound and a secure fit. Features 10mm drivers, Bluetooth 5.0 connectivity, 6-hour battery life, and noise-canceling microphones for clear calls."
+  },
+  {
+    "name": "Nimbus",
+    "id": 15,
+    "path": "images/earBuds/2.jpg",
+    "price": 3319.17,
+    "details": "Premium earbuds with noise-canceling features. Equipped with 12mm drivers, a 20Hz-22kHz frequency response, active noise cancellation, and a wireless charging case."
+  },
+  {
+    "name": "Sonic Wave",
+    "id": 16,
+    "path": "images/earBuds/3.jpg",
+    "price": 4149.17,
+    "details": "Top-of-the-line earbuds with immersive sound quality. Includes 14mm drivers, a 15Hz-24kHz frequency response, touch controls, and IPX7 waterproof rating."
+  },
+  {
+    "name": "Astra",
+    "id": 17,
+    "path": "images/earBuds/4.jpg",
+    "price": 4969.17,
+    "details": "Earbuds designed for rich, detailed sound. Features hybrid drivers, a 10Hz-25kHz frequency response, adaptive noise cancellation, and a premium metal finish."
+  },
+  {
+    "name": "Quasar",
+    "id": 18,
+    "path": "images/earBuds/5.jpg",
+    "price": 5759.17,
+    "details": "High-end earbuds offering superior sound clarity. Includes planar magnetic drivers, a 5Hz-28kHz frequency response, customizable EQ settings, and a magnetic charging dock."
+  }
+]

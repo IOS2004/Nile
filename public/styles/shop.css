@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 32px;
+  gap: 20px;
+}
+
+.button-container {
+  align-self: center;
+  display: flex;
+  text-align: start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 50px;
+  margin: 25px;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-width: 400px;
+  max-height: 470px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.product-card #categ {
+  color: #888888;
+  font-size: 16px;
+}
+
+.product-card #product_name {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.product-card #product_price {
+  font-weight: 600;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 16px;
+  flex: 0 1 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+
+.categories button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: medium;
+}
+
+.categories h2 {
+  font-size: xx-large;
+  margin: 20px;
+}
+
+/* screen adjustments */
+
+@media only screen and (max-width: 1000px) {
+  /* Styles for mobile devices */
+  .product-card {
+    max-width: 300px;
+    max-height: 370px;
+  }
+  .showcase {
+    padding: 35px;
+    margin: 16px;
+    gap: 32px;
+  }
+  
+}
+
+@media only screen and (max-width: 750px) {
+  /* Styles for mobile devices */
+  .product-card {
+    max-width: 200px;
+    max-height: 270px;
+  }
+  .showcase {
+    padding: 10px;
+    margin: 10px;
+    gap: 32px;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+  /* Styles for mobile devices */
+  .product-card {
+    max-width: 150px;
+    max-height: 220px;
+  }
+  .showcase {
+    padding: 2px;
+    margin: 2px;
+    gap: 16px;
+    padding-bottom: 100px;
+  }
+  
+}

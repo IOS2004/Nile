@@ -1,0 +1,96 @@
+.prod.scroll-card {
+  margin: 0px 100px;
+}
+.prod .item-card {
+  max-width: 300px;
+  max-height: 370px;
+}
+
+.buy-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px;
+  padding: 50px 100px;
+  border-radius: 10px;
+  gap: 50px;
+}
+
+.item-showcase {
+  display: flex;
+  max-width: 450px;
+  max-height: 520px;
+  align-self: flex-start;
+}
+
+.item-showcase img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.information {
+  margin-left: auto;
+  align-self: baseline;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 600px;
+}
+
+.information h3 {
+  font-size: 22px;
+  padding: 0;
+  margin: 8px;
+  margin-left: 0;
+}
+
+#iname {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+#iprice {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+#istatus 
+{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#idelivery {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#itax {
+  font-weight: 400;
+  color: #6e6e6e;
+}
+
+#icart, #ifav{
+  border: none;
+  background-color: black;
+  color: white;
+  width: 200px;
+  font-size: 18px;
+  height: 50px;
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#ifav:hover, #icart:hover {
+  background-color: blue;
+  color: white;
+}
+
+#info {
+  font-size: 18px;
+  font-weight: 400;
+}
