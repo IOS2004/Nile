@@ -1,0 +1,27 @@
+body{
+  margin: 0;
+}
+
+.intro{
+    text-align: center;
+}
+
+.box{
+    margin-top: 20px;
+}
+
+.container{
+  
+
+    margin: 50px;
+}
+
+.container a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.container .box a {
+  text-decoration: none;
+  color: inherit;
+}
