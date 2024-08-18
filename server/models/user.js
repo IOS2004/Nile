@@ -14,8 +14,16 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true
-  }
-}
+  },
+  cart: [{
+    id: Number,
+    frequency: Number
+  }],
+  favourites: [{
+    id: Number,
+    frequency: Number
+  }]
+}, { timestamps: true }
 )
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();

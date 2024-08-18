@@ -9,20 +9,18 @@ router.get('/', (req, res) => {
 })
 
 router.get('/auth-status', authenticateToken, (req, res) => {
-  // console.log(req.isAuthenticated)
-  // const authStatus = req.isAuthenticated ? 'Logged In' : 'Logged Out';
-  // res.json({ authStatus });
+  
 });
 
 router.post('/logout', (req, res) => {
-  res.clearCookie('token'); // Clear the cookie named 'token
+  res.clearCookie('token'); 
   res.sendStatus(200);
 });
 
-// Route for the home page
 router.get('/', (req, res) => {
   res.render('index');
 });
+
 
 
 
