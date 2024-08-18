@@ -25,4 +25,21 @@ for (let i = 0; i < 6; i++)
 
 let image = document.querySelector('.item-showcase');
 
-image.innerHTML = '<img src="../images/bestselling/1.jpg" alt="name">';
+function update_data(product) {
+  image.innerHTML = '<img src="' + '../' + product.path + '" alt="'+ product.name +'">';
+  document.querySelector('#iname').innerHTML = product.name;
+  document.querySelector('#iprice').innerHTML = '&#8377; ' + product.price
+  document.querySelector('#istatus').innerHTML = '<h3>Product Info</h3>' + product.details;
+}
+
+document.addEventListener("DOMContentLoaded",function(){
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get('id');
+  fetch(`/nile/product/details?id=${id}`)
+  .then(response => response.json())
+  .then(data => {
+    update_data(data);
+  })
+})
+

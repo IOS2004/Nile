@@ -41,17 +41,20 @@ for (let i = 0; i < 7; i++)
 // Managing profile
 
 let login_btn = document.querySelector("#login-btn");
+localStorage.setItem('islogged', 'f');
 
 function updateLoginStatus(str, isLogin) {
   // handle status
   if (isLogin) {
     login_btn.href = "pages/profile.html";
     login_btn.innerHTML = 'Profile';
+    localStorage.setItem('islogged', 't');
   }
   else
   {
     login_btn.href = "/nile/login";
     login_btn.innerHTML = 'Login';
+    localStorage.setItem('islogged', 'f');
   }
 }
 
