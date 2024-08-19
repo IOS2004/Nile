@@ -169,7 +169,7 @@ addToFav.addEventListener('click', () => {
       .catch(error => console.error('Error updating fav:', error));
   }
   else {
-    console.error('Please login');
+    alert('Please login to add to favourite');
   }
 })
 

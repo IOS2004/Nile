@@ -215,5 +215,131 @@
     "path": "images/earBuds/5.jpg",
     "price": 5759.84,
     "details": "High-end earbuds offering superior sound clarity. Includes planar magnetic drivers, a 5Hz-28kHz frequency response, customizable EQ settings, and a magnetic charging dock."
-  }
+  },
+    {
+      "name": "Zephyr",
+      "id": 32,
+      "path": "images/inEar/6.jpg",
+      "price": 2789.45,
+      "details": "In-ear headphones with dynamic sound and ergonomic fit. Features 10mm drivers, a 20Hz-20kHz frequency response, and tangle-free cables."
+    },
+    {
+      "name": "Aura Pods",
+      "id": 33,
+      "path": "images/earBuds/6.jpg",
+      "price": 3599.89,
+      "details": "True wireless earbuds with noise-canceling and 8-hour battery life. Includes 12mm drivers, touch controls, and a sleek charging case."
+    },
+    {
+      "name": "Vibe Plus",
+      "id": 34,
+      "path": "images/inEar/7.jpg",
+      "price": 4239.74,
+      "details": "In-ear headphones with enhanced bass and sweat resistance. Equipped with 9mm drivers, a 18Hz-22kHz frequency response, and secure fit."
+    },
+    {
+      "name": "Stream Buds",
+      "id": 35,
+      "path": "images/earBuds/7.jpg",
+      "price": 3859.34,
+      "details": "Wireless earbuds designed for streaming and gaming. Features low latency, 10mm drivers, and IPX5 water resistance."
+    },
+    {
+      "name": "Clarity Pods",
+      "id": 36,
+      "path": "images/inEar/8.jpg",
+      "price": 4999.15,
+      "details": "In-ear headphones with crystal-clear sound and passive noise isolation. Includes dual drivers, a 16Hz-24kHz frequency response, and customizable ear tips."
+    },
+    {
+      "name": "Echo Lite",
+      "id": 37,
+      "path": "images/earBuds/8.jpg",
+      "price": 3129.87,
+      "details": "Lightweight wireless earbuds with a minimalist design. Features 11mm drivers, 5-hour battery life, and voice assistant support."
+    },
+    {
+      "name": "Nimbus Mini",
+      "id": 38,
+      "path": "images/inEar/9.jpg",
+      "price": 4459.76,
+      "details": "Compact in-ear headphones with balanced sound and a comfortable fit. Includes 8mm drivers, a 20Hz-18kHz frequency response, and a durable cable."
+    },
+    {
+      "name": "Pulse Max",
+      "id": 39,
+      "path": "images/earBuds/9.jpg",
+      "price": 3789.25,
+      "details": "High-fidelity earbuds with extended battery life. Features 13mm drivers, active noise cancellation, and wireless charging."
+    },
+    {
+      "name": "Wave Lite",
+      "id": 40,
+      "path": "images/inEar/10.jpg",
+      "price": 3299.52,
+      "details": "In-ear headphones with water resistance and deep bass. Equipped with 11mm drivers, 16Hz-20kHz frequency response, and secure ear hooks."
+    },
+    {
+      "name": "Echo Beat",
+      "id": 41,
+      "path": "images/earBuds/10.jpg",
+      "price": 3999.14,
+      "details": "Wireless earbuds with enhanced bass and noise isolation. Includes 10mm drivers, Bluetooth 5.0, and a compact charging case."
+    },
+    {
+      "name": "Radiance",
+      "id": 42,
+      "path": "images/inEar/11.jpg",
+      "price": 3599.88,
+      "details": "In-ear headphones with radiant sound quality and ergonomic design. Features 9mm drivers, a 20Hz-21kHz frequency response, and flexible ear tips."
+    },
+    {
+      "name": "Astra X",
+      "id": 43,
+      "path": "images/earBuds/11.jpg",
+      "price": 4559.94,
+      "details": "Premium earbuds with superior noise-canceling features. Equipped with 12mm drivers, a 20Hz-22kHz frequency response, and wireless charging."
+    },
+    {
+      "name": "Blaze Pods",
+      "id": 44,
+      "path": "images/inEar/12.jpg",
+      "price": 4399.63,
+      "details": "In-ear headphones with a fiery sound profile and dynamic drivers. Includes 10mm drivers, 18Hz-23kHz frequency response, and sweat-proof design."
+    },
+    {
+      "name": "Echo Pro X",
+      "id": 45,
+      "path": "images/earBuds/12.jpg",
+      "price": 4899.91,
+      "details": "True wireless earbuds with pro-grade sound and extended battery life. Features 14mm drivers, ANC, and IPX7 water resistance."
+    },
+    {
+      "name": "Nova Mini",
+      "id": 46,
+      "path": "images/inEar/13.jpg",
+      "price": 4129.77,
+      "details": "Compact in-ear headphones with a wide soundstage and precise audio. Includes 8mm drivers, 15Hz-22kHz frequency response, and noise-isolating ear tips."
+    },
+    {
+      "name": "Hyper Buds",
+      "id": 47,
+      "path": "images/earBuds/13.jpg",
+      "price": 4799.85,
+      "details": "High-performance earbuds with ultra-low latency and powerful bass. Features 11mm drivers, touch controls, and fast charging."
+    },
+    {
+      "name": "Orbit X",
+      "id": 48,
+      "path": "images/inEar/14.jpg",
+      "price": 4299.58,
+      "details": "In-ear headphones with orbital drivers for a 3D sound experience. Equipped with 10mm drivers, 20Hz-24kHz frequency response, and ergonomic design."
+    },
+    {
+      "name": "Pulse Wave",
+      "id": 49,
+      "path": "images/earBuds/14.jpg",
+      "price": 4699.47,
+      "details": "Earbuds with deep bass and immersive sound for music lovers. Includes 12mm drivers, Bluetooth 5.1, and a comfortable in-ear design."
+    }  
 ]
