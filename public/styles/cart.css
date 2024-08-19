@@ -105,6 +105,20 @@
   gap: 8px;
 }
 
+.checkout {
+  text-align: center;
+}
+
+.total {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
 @media only screen and (max-width: 800px) {
   .cart-card {
     width: 100%;
