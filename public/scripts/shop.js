@@ -132,7 +132,26 @@ function update_products(data) {
   let overEarData = data.filter(item => /overEar/.test(item.path));
   let inEarData = data.filter(item => /inEar/.test(item.path));
   let earBudsData = data.filter(item => /earBuds/.test(item.path));
-  displayAll(overEarData, inEarData, earBudsData);
+  // update category
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const category = urlParams.get('category');
+  if (category === 'iem')
+  {
+    displayInEarMonitor(inEarData);
+  }
+  else if (category === 'eb')
+  {
+    displayEarBuds(earBudsData);
+  }
+  else if (category === 'ovh')
+  {
+    displayOverTheEar(overEarData);
+  }
+  else 
+  {
+    displayAll(overEarData, inEarData, earBudsData);
+  }
   overEar.addEventListener('click', () => {
     displayOverTheEar(overEarData);
   })

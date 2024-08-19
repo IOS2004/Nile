@@ -16,6 +16,11 @@
   gap: 20px;
 }
 
+.categories strong {
+  font-family: "Ysabeau SC", sans-serif;
+  font-size: 20px;
+  font-weight: 550;
+}
 .button-container {
   display: flex;
   flex-wrap: wrap;
