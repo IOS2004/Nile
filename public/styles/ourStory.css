@@ -10,12 +10,11 @@ body {
   justify-content: center;
   font-size: 30px;
   font-weight: bold;
-  background-color: rgb(250, 248, 248);
   padding: 20px 0;
 }
 
 .container {
-  padding: 20px;
+  padding: 64px;
   margin-bottom: 50px;
   align-items: center;
   justify-content: center;

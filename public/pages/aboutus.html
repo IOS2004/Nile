@@ -46,31 +46,36 @@
         </div>
     </section>
     
-      
+    <script>
+        let learnMore = document.querySelector('.cta-button');
+        learnMore.addEventListener('click', () => {
+            window.location.href = '../pages/ourStory.html';
+        })
+    </script>
 
     <div class="footer" id="mainFooter">
     <div class="foot-info y-straight">
         <ul>
         <li style="font-size: 24px;">navigations</li>
         <br>
-        <li><a href="#">about us</a></li>
-        <li><a href="#">support</a></li>
-        <li><a href="#">our story</a></li>
-        <li><a href="#">brands</a></li>
+        <li><a href="aboutus.html">about us</a></li>
+        <li><a href="support.html">support</a></li>
+        <li><a href="ourStory.html">our story</a></li>
+        <li><a href="shop.html">shop</a></li>
         </ul>
         <ul>
         <li style="font-size: 24px;">products</li>
         <br>
-        <li><a href="#">iems</a></li>
-        <li><a href="#">headphones</a></li>
-        <li><a href="#">ear buds</a></li>
+        <li><a href="shop.html?category=iem">iems</a></li>
+        <li><a href="shop.html?category=ovh">headphones</a></li>
+        <li><a href="shop.html?category=eb">ear buds</a></li>
         </ul>
     </div>
     <div class="line-sep"></div>
     <div class="bottom-line y-straight">
-        <li id="blog"> <a href="#"">&#169; 2024 <span style="color: blue;">nile</span></a> </li>
-        <li> <a href="#">privacy policy</a> </li>
-        <li> <a href="#">term and conditions</a> </li>
+        <li id="blog"> <a href="/nile">&#169; 2024 <span style="color: blue;">nile</span></a> </li>
+        <li> <a href="privacy.html">privacy policy</a> </li>
+        <li> <a href="term.html">term and conditions</a> </li>
     </div>
     </div>
 </body>
