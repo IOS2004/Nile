@@ -65,3 +65,13 @@
   max-width: 300px;
   max-height: 370px;
 }
+
+@media only screen and (max-width: 600px) {
+  .prof.scroll-card {
+    margin: 0px 50px;
+  }
+  .prof .item-card {
+    max-width: 200px;
+    max-height: 270px;
+  }
+}

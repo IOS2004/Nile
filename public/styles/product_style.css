@@ -94,3 +94,10 @@
   font-size: 18px;
   font-weight: 400;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .buy-container {
+    padding: 12px 24px;
+  }
+}
