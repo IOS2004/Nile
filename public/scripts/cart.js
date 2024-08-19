@@ -10,66 +10,84 @@ cartSection.addEventListener('click', (e) => {
   if (e.target.tagName === 'BUTTON') {
     let button = e.target;
     let card = button.closest('.cart-card');
+    let cardFreq = card.querySelector('#frequency');
     let productId = card.getAttribute('id');
     let buttonType = button.getAttribute('id'); 
+    console.log(cardFreq);
     console.log(`Button clicked: ${buttonType}`);
     const storedUserData=JSON.parse(localStorage.getItem('UserData'));
     if(buttonType==="plus")
     {
-      const index = storedUserData.cart.findIndex(item => {return Number(item.id) === Number(productId)});
-      storedUserData.cart[index].frequency++;
-    
-    
-    console.log('Updated cart:', storedUserData.cart);
-    localStorage.setItem('UserData', JSON.stringify(storedUserData));
-    console.log(storedUserData)
+        const index = storedUserData.cart.findIndex(item => {return Number(item.id) === Number(productId)});
+        storedUserData.cart[index].frequency++;
+        
+      let totPrice = Number(localStorage.getItem('totalPrice'));
+      let total = localStorage.getItem('totalQty');
+      total++;
+      totPrice += Number(card.getAttribute('price'));
+      summary.innerHTML =   '<div>' + 'Total Items: '  + total + '</div>'+'<div>Subtotal: &#8377; '+ totPrice.toFixed(2) + '</div>';
+      localStorage.setItem('totalPrice', totPrice);
+      localStorage.setItem('totalQty', total);
+      cardFreq.textContent = 'QTY ' + storedUserData.cart[index].frequency;
+      console.log('Updated cart:', storedUserData.cart);
+      localStorage.setItem('UserData', JSON.stringify(storedUserData));
+      console.log(storedUserData)
 
-    fetch('/nile/update/cart', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        cart: storedUserData.cart,
-        username: storedUserData.username
+      fetch('/nile/update/cart', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          cart: storedUserData.cart,
+          username: storedUserData.username
+        })
       })
-    })
-      .then(response => response.json())
-      .then(data => {
-        calculateTotalFrequency(storedUserData.cart)
-        console.log('Cart updated successfully:', data);
-      })
-      .catch(error => console.error('Error updating cart:', error));
+        .then(response => response.json())
+        .then(data => {
+          calculateTotalFrequency(storedUserData.cart)
+          console.log('Cart updated successfully:', data);
+        })
+        .catch(error => console.error('Error updating cart:', error));
     }
     else
     {
   const index = storedUserData.cart.findIndex(item => Number(item.id) === Number(productId));
       if (index !== -1) {
-        if (storedUserData.cart[index].frequency > 1) {
-          storedUserData.cart[index].frequency--;
-        } else {
-          storedUserData.cart.splice(index, 1); 
-        }
-        console.log('Updated cart:', storedUserData.cart);
-        localStorage.setItem('UserData', JSON.stringify(storedUserData));
+          if (storedUserData.cart[index].frequency > 1) {
+            storedUserData.cart[index].frequency--;
+            cardFreq.textContent = 'QTY ' + storedUserData.cart[index].frequency;   
+          } else {
+            storedUserData.cart.splice(index, 1); 
+            cartSection.removeChild(card);
+          }
+          console.log('Updated cart:', storedUserData.cart);
+          localStorage.setItem('UserData', JSON.stringify(storedUserData));
+          let totPrice = Number(localStorage.getItem('totalPrice'));
+          let total = localStorage.getItem('totalQty');
+          total--;
+          totPrice -= Number(card.getAttribute('price'));
+          summary.innerHTML =   '<div>' + 'Total Items: '  + total + '</div>'+'<div>Subtotal: &#8377; '+ totPrice.toFixed(2) + '</div>';
+          localStorage.setItem('totalPrice', totPrice);
+          localStorage.setItem('totalQty', total);   
 
-        fetch('/nile/update/cart', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            cart: storedUserData.cart,
-            username: storedUserData.username
+          fetch('/nile/update/cart', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              cart: storedUserData.cart,
+              username: storedUserData.username
+            })
           })
-        })
-        .then(response => response.json())
-        .then(data => {
-          calculateTotalFrequency(storedUserData.cart);
-          console.log('Cart updated successfully:', data);
-        })
-        .catch(error => console.error('Error updating cart:', error));
-      }
+          .then(response => response.json())
+          .then(data => {
+            calculateTotalFrequency(storedUserData.cart);
+            console.log('Cart updated successfully:', data);
+          })
+          .catch(error => console.error('Error updating cart:', error));
+        }
     }}
 })
 
@@ -108,7 +126,8 @@ function displayCard(product, frequency)
   eleprice.innerHTML = ' <div class="incdec"> <button id="plus"></button>' + 
                       '<button id="minus"> </button> </div>'
                       +  '&#8377; ' + product.price;
-  elecard.setAttribute('id', product.id);                    
+  elecard.setAttribute('id', product.id);       
+  elecard.setAttribute('price', product.price);             
   elecard.appendChild(eleimage);
   elecard.appendChild(eleinfo);
   elecard.appendChild(eleprice);
@@ -128,7 +147,9 @@ function setItems(total, cart, products){
     totPrice += product[0].price * cartItem.frequency;
     displayCard(product[0], cartItem.frequency);
   }
-  summary.innerHTML = '<div>' + 'Total Items: '  + total + '</div>'+'<div>Subtotal: &#8377; '+ totPrice + '</div>';
+  localStorage.setItem('totalPrice', totPrice.toFixed(2));
+  localStorage.setItem('totalQty', total);
+  summary.innerHTML = '<div>' + 'Total Items: '  + total + '</div>'+'<div>Subtotal: &#8377; '+ totPrice.toFixed(2) + '</div>';
 }
 
 
