@@ -112,7 +112,7 @@ addToCart.addEventListener('click', () => {
     localStorage.setItem('UserData', JSON.stringify(storedUserData));
     console.log(storedUserData)
 
-    fetch('/nile/update-cart', {
+    fetch('/nile/update/cart', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -128,6 +128,52 @@ addToCart.addEventListener('click', () => {
         console.log('Cart updated successfully:', data);
       })
       .catch(error => console.error('Error updating cart:', error));
+  }
+  else {
+    console.error('Please login');
+  }
+})
+//productScript.js
+let addToFav = document.getElementById("ifav");
+addToFav.addEventListener('click', () => {
+  const storedUserData = JSON.parse(localStorage.getItem('UserData'));
+  console.log(storedUserData);
+  console.log(productId)
+  if (storedUserData != null) {
+
+    const index = storedUserData.favourites.findIndex(item => {
+      console.log("item.id is " + item.id + " productId is " + productId);
+      return Number(item.id) === Number(productId);
+    });
+    console.log(index)
+    if (index !== -1) {
+      // storedUserData.favourites[index].frequency++;
+      storedUserData.favourites.splice(index, 1); 
+    }
+    else {
+      const newItem = { id: productId, frequency: 1 };
+      storedUserData.favourites.push(newItem);
+    }
+    console.log('Updated fav:', storedUserData.favourites);
+    localStorage.setItem('UserData', JSON.stringify(storedUserData));
+    console.log(storedUserData)
+
+    fetch('/nile/update/fav', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        favourites: storedUserData.favourites,
+        username: storedUserData.username
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        // calculateTotalFrequency(storedUserData.cart)
+        console.log('Fav updated successfully:', data);
+      })
+      .catch(error => console.error('Error updating fav:', error));
   }
   else {
     console.error('Please login');

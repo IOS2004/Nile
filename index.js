@@ -10,6 +10,7 @@ const shop = require("./server/routes/products.js")
 const productShowcase = require("./server/routes/productShowcase.js")
 const userUpdate = require("./server/routes/updateUser.js")
 const getCart=require("./server/routes/cart.js")
+const getFav=require("./server/routes/favouritProducts.js")
 app.use(express.json())
 const cors = require('cors');
 app.use(cors());
@@ -28,7 +29,8 @@ app.use('/nile', web)
 app.use('/nile/login', login)
 app.use('/nile/shop', shop)
 app.use('/nile/product', productShowcase)
-app.use('/nile/update-cart', userUpdate)
+// app.use('/nile/update-cart', userUpdate)
 app.use('/nile/cart/products',getCart)
-
+app.use('/nile/update', userUpdate)
+app.use('/nile/fav/products',getFav)
 app.listen(8001, () => { console.log("Server running on port 8000") })

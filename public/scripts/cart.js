@@ -1,7 +1,78 @@
-// add Items of cart to display
-
 let cartSection = document.querySelector('.addedItems');
 let summary = document.querySelector('.total');
+let checkout = document.querySelector('.checkout_btn');
+
+checkout.addEventListener('click', () => {
+  alert('Feature is not available yet');
+})
+
+cartSection.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    let button = e.target;
+    let card = button.closest('.cart-card');
+    let productId = card.getAttribute('id');
+    let buttonType = button.getAttribute('id'); 
+    console.log(`Button clicked: ${buttonType}`);
+    const storedUserData=JSON.parse(localStorage.getItem('UserData'));
+    if(buttonType==="plus")
+    {
+      const index = storedUserData.cart.findIndex(item => {return Number(item.id) === Number(productId)});
+      storedUserData.cart[index].frequency++;
+    
+    
+    console.log('Updated cart:', storedUserData.cart);
+    localStorage.setItem('UserData', JSON.stringify(storedUserData));
+    console.log(storedUserData)
+
+    fetch('/nile/update/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        cart: storedUserData.cart,
+        username: storedUserData.username
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        calculateTotalFrequency(storedUserData.cart)
+        console.log('Cart updated successfully:', data);
+      })
+      .catch(error => console.error('Error updating cart:', error));
+    }
+    else
+    {
+  const index = storedUserData.cart.findIndex(item => Number(item.id) === Number(productId));
+      if (index !== -1) {
+        if (storedUserData.cart[index].frequency > 1) {
+          storedUserData.cart[index].frequency--;
+        } else {
+          storedUserData.cart.splice(index, 1); 
+        }
+        console.log('Updated cart:', storedUserData.cart);
+        localStorage.setItem('UserData', JSON.stringify(storedUserData));
+
+        fetch('/nile/update/cart', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            cart: storedUserData.cart,
+            username: storedUserData.username
+          })
+        })
+        .then(response => response.json())
+        .then(data => {
+          calculateTotalFrequency(storedUserData.cart);
+          console.log('Cart updated successfully:', data);
+        })
+        .catch(error => console.error('Error updating cart:', error));
+      }
+    }}
+})
+
 
 function findCategory(parsepath) {
   let cat = '';
@@ -33,10 +104,11 @@ function displayCard(product, frequency)
   eleimage.innerHTML = '<img src="' + '../' + product.path + '" alt="' + product.name +'">';
   eleinfo.innerHTML = '<h3>' +  product.name + '</h3>'
                       + '<div id="categor">' + cat + '</div>'
-                      + '<div id="frequency">' + frequency + '</div>';
+                      + '<div id="frequency"> QTY: ' + frequency + '</div>';
   eleprice.innerHTML = ' <div class="incdec"> <button id="plus"></button>' + 
                       '<button id="minus"> </button> </div>'
                       +  '&#8377; ' + product.price;
+  elecard.setAttribute('id', product.id);                    
   elecard.appendChild(eleimage);
   elecard.appendChild(eleinfo);
   elecard.appendChild(eleprice);
@@ -56,7 +128,7 @@ function setItems(total, cart, products){
     totPrice += product[0].price * cartItem.frequency;
     displayCard(product[0], cartItem.frequency);
   }
-  summary.innerHTML = '<div>' + 'Total Items: '  + total + '</div>'+'<div>Subtotal: '+ totPrice + '</div>';
+  summary.innerHTML = '<div>' + 'Total Items: '  + total + '</div>'+'<div>Subtotal: &#8377; '+ totPrice + '</div>';
 }
 
 
@@ -80,7 +152,7 @@ function updateLoginStatus(str, isLogin) {
 fetch('/nile/auth-status')
   .then(response => response.json())
   .then(data => {
-    // localStorage.setItem('UserData', JSON.stringify(data));
+     localStorage.setItem('UserData', JSON.stringify(data));
     if (data) {
 
       const name = data.username;

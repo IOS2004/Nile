@@ -21,6 +21,21 @@ fetch('/nile/auth-status')
       const name = data.username;
       calculateTotalFrequency(data.cart)
       updateLoginStatus(name, true);
+      fetch('/nile/fav/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ favourites: data.favourites })
+      })
+      .then(response => response.json())
+      .then(submitResponse => {
+        console.log(' fav submitted successfully:', submitResponse);
+        // lund
+      })
+      .catch(error => {
+        console.error('Error submitting cart:', error);
+      });
 
     } else {
       updateLoginStatus("Not logged in", false);
