@@ -4,10 +4,6 @@ const router = express.Router()
 const Product=require("../models/product.js")
 
 
-
-
-
-
 router.post('/', async (req, res) => {
   try {
     // Get the cart data from the request body

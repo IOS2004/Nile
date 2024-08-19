@@ -26,6 +26,20 @@ function update_data(product) {
   document.querySelector('#iname').innerHTML = product.name;
   document.querySelector('#iprice').innerHTML = '&#8377; ' + product.price
   document.querySelector('#istatus').innerHTML = '<h3>Product Info</h3>' + product.details;
+  const storedUserData = JSON.parse(localStorage.getItem('UserData'));
+  if (storedUserData != null) {
+
+    const index = storedUserData.favourites.findIndex(item => {
+      return Number(item.id) === Number(product.id);
+    });
+    console.log(index)
+    if (index !== -1) {
+      addToFav.style.backgroundColor = 'red';
+    }
+    else {
+      addToFav.style.backgroundColor = 'black';
+    }
+  }
 }
 let productId;
 function setId(id) {
@@ -147,11 +161,12 @@ addToFav.addEventListener('click', () => {
     });
     console.log(index)
     if (index !== -1) {
-      // storedUserData.favourites[index].frequency++;
       storedUserData.favourites.splice(index, 1); 
+      addToFav.style.backgroundColor = 'black';
     }
     else {
       const newItem = { id: productId, frequency: 1 };
+      addToFav.style.backgroundColor = 'red';
       storedUserData.favourites.push(newItem);
     }
     console.log('Updated fav:', storedUserData.favourites);
@@ -170,7 +185,6 @@ addToFav.addEventListener('click', () => {
     })
       .then(response => response.json())
       .then(data => {
-        // calculateTotalFrequency(storedUserData.cart)
         console.log('Fav updated successfully:', data);
       })
       .catch(error => console.error('Error updating fav:', error));
