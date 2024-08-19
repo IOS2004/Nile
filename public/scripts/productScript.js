@@ -90,11 +90,16 @@ function calculateTotalFrequency(cart) {
 
 let addToCart = document.getElementById("icart");
 addToCart.addEventListener('click', () => {
+  if (localStorage.getItem('islogged') == 'f')
+  {
+    alert("Please Log in to add items to cart");
+    return;
+  }
   const storedUserData = JSON.parse(localStorage.getItem('UserData'));
   console.log(storedUserData);
   console.log(productId)
   if (storedUserData != null) {
-    const index = storedUserData.cart.findIndex(item => item.id === productId);
+    const index = storedUserData.cart.findIndex(item => {return Number(item.id) === Number(productId)});
 
     if (index !== -1) {
       storedUserData.cart[index].frequency++;

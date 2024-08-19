@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cart</title>
+  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Ysabeau+SC:wght@1..1000&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../styles/cart.css">
+  <script src="../scripts/cart.js" defer></script>
+  <title>Nile</title>
 </head>
 <body>
   <div class="header WorkSans" id="mainHeader">
@@ -18,7 +27,7 @@
         <li> <a href="#" style="font-weight: 500;" id="login-btn">Profile</a> </li>
         <li> 
           <a href="#"><img alt="Cart" src="../images/cart.png"></a> 
-          <div class="badge">0</div>
+          <div class="badge" id="nums">0</div>
         </li>
       </div>
     </ul>
@@ -28,6 +37,24 @@
     <h1>Cart</h1>
     <div class="addedItems">
       <!-- use user cart database to display items with their frequency-->
+       <div class="cart-card">
+        <div class="card-image">
+          <img src="../images/iem.jpg">
+        </div>
+        <div class="card-info">
+          <h3>Thunder guiders</h3> 
+          <div id="categor">In Ear</div>
+        </div>
+        <div class="card-price">
+          <div class="incdec">
+            <button id="plus">
+            </button>
+            <button id="minus">
+            </button>
+          </div>
+          $ 3000
+        </div>
+       </div>
     </div>
     <div class="checkout">
       <button class="checkout_btn">Checkout</button>
@@ -55,7 +82,7 @@
     </div>
     <div class="line-sep"></div>
     <div class="bottom-line y-straight">
-      <li id="blog"> <a href="/nile"">&#169; 2024 <span style="color: blue;">nile</span></a> </li>
+      <li id="blog"> <a href="/nile">&#169; 2024 <span style="color: blue;">nile</span></a> </li>
       <li> <a href="#">privacy policy</a> </li>
       <li> <a href="#">term and conditions</a> </li>
     </div>
