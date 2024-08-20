@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 
     } catch (error) {
       console.log(error)
-      res.status(500).send('Error ', error.message);
+      res.status(500).send('Error ' + error.message);
     }
   });
 

@@ -11,6 +11,9 @@ const productShowcase = require("./server/routes/productShowcase.js")
 const userUpdate = require("./server/routes/updateUser.js")
 const getCart=require("./server/routes/cart.js")
 const getFav=require("./server/routes/favouritProducts.js")
+require('dotenv').config();
+const MONGODB_KEY = process.env.MONGODB_KEY;
+
 app.use(express.json())
 const cors = require('cors');
 app.use(cors());
@@ -33,4 +36,4 @@ app.use('/nile/product', productShowcase)
 app.use('/nile/cart/products',getCart)
 app.use('/nile/update', userUpdate)
 app.use('/nile/fav/products',getFav)
-app.listen(8001, () => { console.log("Server running on port 8000") })
+app.listen(8000, () => { console.log("Server running on port 8000") })
