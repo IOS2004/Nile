@@ -12,7 +12,6 @@ router.post('/', async (req, res) => {
   try {
     // Get the cart data from the request body
     const { cart } = req.body;
-    console.log(cart)
     if (!cart || !Array.isArray(cart)) {
       return res.status(400).json({ error: 'Invalid cart data' });
     }

@@ -95,6 +95,18 @@
   font-weight: 400;
 }
 
+#toast {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  color: cyan;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
 
 @media only screen and (max-width: 600px) {
   .buy-container {

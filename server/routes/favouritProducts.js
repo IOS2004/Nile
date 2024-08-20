@@ -8,7 +8,6 @@ router.post('/', async (req, res) => {
   try {
     // Get the cart data from the request body
     const { favourites } = req.body;
-    console.log(favourites)
     if (!favourites || !Array.isArray(favourites)) {
       return res.status(400).json({ error: 'Invalid cart data' });
     }

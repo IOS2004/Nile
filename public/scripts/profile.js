@@ -43,8 +43,6 @@ fetch('/nile/auth-status')
       })
       .then(response => response.json())
       .then(submitResponse => {
-        console.log(' fav submitted successfully:', submitResponse);
-        // lund
         for (let i = 0; i < submitResponse.length; i++)
         {
           let favprod = submitResponse[i];

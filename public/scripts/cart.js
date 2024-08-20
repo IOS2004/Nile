@@ -13,8 +13,7 @@ cartSection.addEventListener('click', (e) => {
     let cardFreq = card.querySelector('#frequency');
     let productId = card.getAttribute('id');
     let buttonType = button.getAttribute('id'); 
-    console.log(cardFreq);
-    console.log(`Button clicked: ${buttonType}`);
+ 
     const storedUserData=JSON.parse(localStorage.getItem('UserData'));
     if(buttonType==="plus")
     {
@@ -29,9 +28,7 @@ cartSection.addEventListener('click', (e) => {
       localStorage.setItem('totalPrice', totPrice);
       localStorage.setItem('totalQty', total);
       cardFreq.textContent = 'QTY ' + storedUserData.cart[index].frequency;
-      console.log('Updated cart:', storedUserData.cart);
       localStorage.setItem('UserData', JSON.stringify(storedUserData));
-      console.log(storedUserData)
 
       fetch('/nile/update/cart', {
         method: 'POST',
@@ -46,7 +43,6 @@ cartSection.addEventListener('click', (e) => {
         .then(response => response.json())
         .then(data => {
           calculateTotalFrequency(storedUserData.cart)
-          console.log('Cart updated successfully:', data);
         })
         .catch(error => console.error('Error updating cart:', error));
     }
@@ -61,7 +57,6 @@ cartSection.addEventListener('click', (e) => {
             storedUserData.cart.splice(index, 1); 
             cartSection.removeChild(card);
           }
-          console.log('Updated cart:', storedUserData.cart);
           localStorage.setItem('UserData', JSON.stringify(storedUserData));
           let totPrice = Number(localStorage.getItem('totalPrice'));
           let total = localStorage.getItem('totalQty');
@@ -84,7 +79,6 @@ cartSection.addEventListener('click', (e) => {
           .then(response => response.json())
           .then(data => {
             calculateTotalFrequency(storedUserData.cart);
-            console.log('Cart updated successfully:', data);
           })
           .catch(error => console.error('Error updating cart:', error));
         }
@@ -188,7 +182,6 @@ fetch('/nile/auth-status')
       })
       .then(response => response.json())
       .then(submitResponse => {
-        console.log('Cart submitted successfully:', submitResponse);
         setItems(tot, data.cart, submitResponse);
       })
       .catch(error => {

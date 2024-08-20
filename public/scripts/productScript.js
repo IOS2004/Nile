@@ -1,5 +1,14 @@
 let image = document.querySelector('.item-showcase');
 
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.innerHTML = message;
+  toast.style.display = 'block';
+  setTimeout(() => {
+    toast.style.display = 'none';
+  }, 2000); // Hide after 2 seconds
+}
+
 function update_data(product) {
   image.innerHTML = '<img src="' + '../' + product.path + '" alt="' + product.name + '">';
   document.querySelector('#iname').innerHTML = product.name;
@@ -11,7 +20,6 @@ function update_data(product) {
     const index = storedUserData.favourites.findIndex(item => {
       return Number(item.id) === Number(product.id);
     });
-    console.log(index)
     if (index !== -1) {
       addToFav.style.backgroundColor = 'red';
     }
@@ -89,8 +97,6 @@ addToCart.addEventListener('click', () => {
     return;
   }
   const storedUserData = JSON.parse(localStorage.getItem('UserData'));
-  console.log(storedUserData);
-  console.log(productId)
   if (storedUserData != null) {
     const index = storedUserData.cart.findIndex(item => {return Number(item.id) === Number(productId)});
 
@@ -101,9 +107,8 @@ addToCart.addEventListener('click', () => {
       const newItem = { id: productId, frequency: 1 };
       storedUserData.cart.push(newItem);
     }
-    console.log('Updated cart:', storedUserData.cart);
     localStorage.setItem('UserData', JSON.stringify(storedUserData));
-    console.log(storedUserData)
+    showToast('&#10004; Item added successfully');
 
     fetch('/nile/update/cart', {
       method: 'POST',
@@ -118,7 +123,6 @@ addToCart.addEventListener('click', () => {
       .then(response => response.json())
       .then(data => {
         calculateTotalFrequency(storedUserData.cart)
-        console.log('Cart updated successfully:', data);
       })
       .catch(error => console.error('Error updating cart:', error));
   }
@@ -130,27 +134,23 @@ addToCart.addEventListener('click', () => {
 let addToFav = document.getElementById("ifav");
 addToFav.addEventListener('click', () => {
   const storedUserData = JSON.parse(localStorage.getItem('UserData'));
-  console.log(storedUserData);
-  console.log(productId)
   if (storedUserData != null) {
 
     const index = storedUserData.favourites.findIndex(item => {
-      console.log("item.id is " + item.id + " productId is " + productId);
       return Number(item.id) === Number(productId);
     });
-    console.log(index)
     if (index !== -1) {
       storedUserData.favourites.splice(index, 1); 
       addToFav.style.backgroundColor = 'black';
+      showToast(' &#9825; Item removed from favourites');
     }
     else {
       const newItem = { id: productId, frequency: 1 };
       addToFav.style.backgroundColor = 'red';
       storedUserData.favourites.push(newItem);
+      showToast('&#10084; Item added to favourites')
     }
-    console.log('Updated fav:', storedUserData.favourites);
     localStorage.setItem('UserData', JSON.stringify(storedUserData));
-    console.log(storedUserData)
 
     fetch('/nile/update/fav', {
       method: 'POST',
@@ -164,7 +164,6 @@ addToFav.addEventListener('click', () => {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('Fav updated successfully:', data);
       })
       .catch(error => console.error('Error updating fav:', error));
   }
