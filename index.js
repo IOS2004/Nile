@@ -12,7 +12,7 @@ const userUpdate = require("./server/routes/updateUser.js")
 const getCart=require("./server/routes/cart.js")
 const getFav=require("./server/routes/favouritProducts.js")
 require('dotenv').config();
-const MONGODB_KEY = process.env.MONGODB_KEY;
+const MONGODB_KEY = process.env.MONGODB_URI;
 
 app.use(express.json())
 const cors = require('cors');
@@ -23,7 +23,12 @@ app.use(cookieparser());
 app.use(bodyParser.urlencoded({ extended: true }));
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb://127.0.0.1:27017/mile")
+if (!MONGODB_KEY) {
+  console.error('Error: MONGODB_KEY is not defined in the environment variables.');
+  process.exit(1); // Exit the application if the key is not found
+}
+
+mongoose.connect(MONGODB_KEY)
   .then(() => { console.log("Mongoose connected") })
   .catch((err) => { console.log("Error", err) })
 

@@ -4,6 +4,11 @@ require('dotenv').config();
 
 const SECRET_KEY = process.env.JWT_KEY;
 
+if (!SECRET_KEY)
+{
+  console.error('Error: JWT_KEY is not defined in the environment variables.');
+  process.exit(1); // Exit the application if the key is not found
+}
 
 const generateToken = (user) => {
   return jwt.sign({ id: user._id, username: user.username, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
