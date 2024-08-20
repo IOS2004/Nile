@@ -35,8 +35,8 @@ To get started with Nile codebase, follow these steps:
 
 Step 1: Clone the repository
 ```bash
-git clone https://github.com/yourusername/E-Store-backend.git
-cd E-Store-backend
+git clone git@github.com:IOS2004/Nile.git
+cd Nile
 ```
 
 Step 2: Install dependencies
